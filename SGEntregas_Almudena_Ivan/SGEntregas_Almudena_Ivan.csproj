@@ -71,6 +71,12 @@
     <Compile Include="provincias.cs">
       <DependentUpon>EntregaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\Pedidos\Ventana_Pedidos_Cliente.xaml.cs">
+      <DependentUpon>Ventana_Pedidos_Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\Usuarios\SeleccionarUsuario.xaml.cs">
+      <DependentUpon>SeleccionarUsuario.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +99,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Ventanas\Escritorio\Pedidos\Ventana_Pedidos_Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\Usuarios\SeleccionarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -142,6 +156,9 @@
       <DependentUpon>EntregaModel.edmx</DependentUpon>
       <LastGenOutput>EntregaModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ventanas\Tablet\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
