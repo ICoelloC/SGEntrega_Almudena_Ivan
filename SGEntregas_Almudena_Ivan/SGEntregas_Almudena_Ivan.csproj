@@ -35,13 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -62,6 +57,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clientes.cs">
+      <DependentUpon>EntregaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntregaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pedidos.cs">
+      <DependentUpon>EntregaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="provincias.cs">
+      <DependentUpon>EntregaModel.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,15 +79,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EntregasModel.Context.cs">
+    <Compile Include="EntregaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EntregasModel.Context.tt</DependentUpon>
+      <DependentUpon>EntregaModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntregasModel.Designer.cs">
+    <Compile Include="EntregaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EntregasModel.edmx</DependentUpon>
+      <DependentUpon>EntregaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -103,12 +112,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="EntregasModel.edmx">
+    <EntityDeploy Include="EntregaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntregasModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EntregaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EntregasModel.edmx.diagram">
-      <DependentUpon>EntregasModel.edmx</DependentUpon>
+    <None Include="EntregaModel.edmx.diagram">
+      <DependentUpon>EntregaModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -120,13 +129,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntregasModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EntregasModel.Context.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="EntregaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EntregaModel.edmx</DependentUpon>
+      <LastGenOutput>EntregaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntregaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EntregaModel.edmx</DependentUpon>
+      <LastGenOutput>EntregaModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
